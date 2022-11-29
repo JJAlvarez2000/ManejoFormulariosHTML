@@ -8,7 +8,7 @@
         <script type="text/javascript" src="resources/funciones.js"></script>
     </head>
     <body>
-        <form name="form1" action="/ManejoFormulariosHTML/Servlet" method="post"
+        <form name="form1" action="/ManejoFormulariosHTML-1.0-SNAPSHOT/servlet" method="post"
         onSubmit="return validarForma(this)">
         <input type="hidden" name="oculto" value="valorOculto" />
         <table width="200" id="enfasis-columna">
