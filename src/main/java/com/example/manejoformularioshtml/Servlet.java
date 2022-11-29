@@ -5,20 +5,22 @@ import jakarta.servlet.annotation.*;
 
 @WebServlet(name = "Servlet", value = "/servlet")
 public class Servlet extends HttpServlet {
-    private String message;
 
-    public void init() {
-        message = "Hello World!";
-    }
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            response.setContentType("text/html;charset=UTF-8");
+            PrintWriter out = response.getWriter();
+            String usuario = request.getParameter("usuario");
+            String password = request.getParameter("contrasena");
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html");
+            out.print("Welcome " + usuario);
 
-        // Hello
-        PrintWriter out = response.getWriter();
-        out.println("<html><body>");
-        out.println("<h1>" + message + "</h1>");
-        out.println("</body></html>");
+
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     public void destroy() {
